@@ -15,6 +15,7 @@ fi
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
+zsh_extensions=($ZSH/zsh/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -38,6 +39,13 @@ do
   source $file
 done
 
+# load zsh extensions
+for file in "$zsh_extensions"
+do
+  source $file
+done
+
+
 unset config_files
 
 # Better history
@@ -48,3 +56,6 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+# Setup pyenv
+eval "$(pyenv init -)"
