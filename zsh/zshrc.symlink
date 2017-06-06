@@ -63,7 +63,7 @@ eval $(/usr/libexec/path_helper -s)
 
 # Theme
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 POWERLEVEL9K_VCS_GIT_ICON=''
