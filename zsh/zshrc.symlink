@@ -15,7 +15,7 @@ fi
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
-zsh_extensions=($ZSH/zsh/**/*.zsh)
+#zsh_extensions=($ZSH/zsh/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -40,11 +40,11 @@ do
 done
 
 # load zsh extensions
-for file in "$zsh_extensions"
-do
-  source $file
-done
-
+# for file in "$zsh_extensions"
+# do
+#   source $file
+# done
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 unset config_files
 
@@ -63,7 +63,7 @@ eval $(/usr/libexec/path_helper -s)
 
 # Theme
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 POWERLEVEL9K_VCS_GIT_ICON=''
@@ -83,3 +83,5 @@ POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%K{white}%F{black} `date +%T` \UE12
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status pyenv background_jobs ram battery)
 source $ZSH/zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
