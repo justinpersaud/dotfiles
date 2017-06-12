@@ -1,3 +1,11 @@
+# Setup pyenv
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval $(/usr/libexec/path_helper -s)
+
+source ~/Settings/env.sh
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
@@ -57,10 +65,6 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# Setup pyenv
-eval "$(pyenv init -)"
-eval $(/usr/libexec/path_helper -s)
-
 # Theme
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_MODE='awesome-patched'
@@ -85,3 +89,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status pyenv background_jobs ram battery)
 source $ZSH/zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+unsetopt nomatch
