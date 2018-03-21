@@ -45,4 +45,5 @@ cask 'vlc'
 cask 'visual-studio-code'
 cask 'virtualbox'
 cask 'pycharm-ce'
+cask 'keybase'
 
