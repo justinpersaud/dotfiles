@@ -1,10 +1,11 @@
 # Setup pyenv
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#eval "$(pyenv virtualenv-init -)"
 eval $(/usr/libexec/path_helper -s)
 
-source ~/Settings/env.sh
+#source ~/Settings/env.sh
+ZSH_THEME="honukai"
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
@@ -23,7 +24,7 @@ fi
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
-#zsh_extensions=($ZSH/zsh/**/*.zsh)
+zsh_extensions=($ZSH/zsh/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -47,11 +48,11 @@ do
 done
 
 # load zsh extensions
-# for file in "$zsh_extensions"
-# do
-#   source $file
-# done
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+for file in $zsh_extensions
+do
+ source $file
+done
+#source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 unset config_files
 
@@ -71,6 +72,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export PATH="$PATH:$HOME/.rvm/bin"
 unsetopt nomatch
 
-ZSH_THEME="dracula"
-source $ZSH/zsh/custom/themes/dracula/dracula.zsh-theme
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+source ~/.dotfiles/oh-my-zsh/themes/honukai.zsh-theme
