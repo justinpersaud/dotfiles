@@ -36,6 +36,7 @@ brew 'wget'
 brew 'yarn'
 brew 'z'
 brew 'hub'
+brew 'shellcheck'
 
 cask 'docker'
 cask '1password'
