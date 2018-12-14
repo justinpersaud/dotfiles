@@ -4,9 +4,6 @@ eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 eval $(/usr/libexec/path_helper -s)
 
-#source ~/Settings/env.sh
-ZSH_THEME="honukai"
-
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
@@ -26,6 +23,13 @@ typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 zsh_extensions=($ZSH/zsh/**/*.zsh)
 
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit; compinit
+
+# load promptinit
+autoload -U promptinit; promptinit
+prompt pure
+
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
 do
@@ -38,9 +42,6 @@ do
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
 do
@@ -73,5 +74,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 unsetopt nomatch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-source ~/.dotfiles/oh-my-zsh/themes/honukai.zsh-theme
