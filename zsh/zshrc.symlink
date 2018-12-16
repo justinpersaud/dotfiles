@@ -53,7 +53,7 @@ for file in $zsh_extensions
 do
  source $file
 done
-#source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 unset config_files
 
