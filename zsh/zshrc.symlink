@@ -74,3 +74,6 @@ unsetopt nomatch
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Hub
+eval "$(hub alias -s)"
