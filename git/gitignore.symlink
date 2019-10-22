@@ -5,3 +5,4 @@
 .vagrant/
 .vscode/
 /Users/justinpersaud/Code/infrastructure/vagrant/salt/config/*
+*.log
