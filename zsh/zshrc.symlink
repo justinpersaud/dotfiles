@@ -77,3 +77,21 @@ eval "$(pyenv virtualenv-init -)"
 
 # Hub
 eval "$(hub alias -s)"
+
+# Tf 0.11
+export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+
+# jenv
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# phpenv
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+# rbenv
+eval "$(rbenv init -)"
+
+# z
+. /usr/local/etc/profile.d/z.sh
