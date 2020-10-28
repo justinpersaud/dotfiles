@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+#zmodload zsh/zprof
 eval $(/usr/libexec/path_helper -s)
 
 # shortcut to this dotfiles path is $ZSH
